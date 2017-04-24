@@ -1,4 +1,7 @@
-# 2017-04-24: Experimental project-specific thing for testing CircleCI's 2.x beta platform.
+# masonmark/uc-e2e-circleci-2: Experimental project-specific thing for testing CircleCI's 2.x beta platform.
+#
+# 2017-04-24: initial version
+
 FROM selenium/standalone-chrome:3.4.0
 
 ENV GOPATH /go
