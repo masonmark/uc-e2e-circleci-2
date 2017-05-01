@@ -35,3 +35,9 @@ RUN cd /usr/local \
     && go get -v github.com/soracom/soracom-sdk-go
 
 RUN sudo gem install bundler
+
+RUN sudo mkdir /opt/yarn
+RUN sudo wget https://yarnpkg.com/downloads/0.21.3/yarn-v0.21.3.tar.gz -O /tmp/yarn.tar.gz && \
+    sudo tar zvxf /tmp/yarn.tar.gz -C /opt/yarn && \
+    sudo ln -s /opt/yarn/dist/bin/yarn /usr/local/bin/yarn && \
+    echo `yarn version`
