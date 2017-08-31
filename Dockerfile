@@ -2,13 +2,13 @@
 #
 # 2017-04-24: initial version
 
-FROM selenium/standalone-chrome:3.4.0
+FROM selenium/standalone-chrome:3.5.2
 
 ENV GOPATH /go
 
 ENV DISPLAY :99
   # then on CI use e.g.: Xvfb :99 -screen 0 1280x1024x24
-  
+
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/bundle/bin:/tmp/user-console/node_modules/.bin:/firefox
 
 RUN sudo apt-get -yqq update && sudo apt-get install -y \
