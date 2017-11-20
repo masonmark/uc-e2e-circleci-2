@@ -1,4 +1,4 @@
-# masonmark/uc-e2e-circleci-2: Experimental project-specific thing for testing CircleCI's 2.x beta platform.
+# masonmark/uc-e2e-circleci-2: A project-specific base image for testing using CircleCI's 2.x platform.
 #
 # 2017-04-24: initial version
 
@@ -39,6 +39,6 @@ RUN sudo gem install bundler
 RUN sudo mkdir /opt/yarn
 RUN sudo wget https://github.com/yarnpkg/yarn/releases/download/v1.3.2/yarn-v1.3.2.tar.gz -O /tmp/yarn.tar.gz && \
     sudo tar zvxf /tmp/yarn.tar.gz -C /opt/yarn && \
-    sudo ln -s /opt/yarn/dist/bin/yarn /usr/local/bin/yarn && \
+    sudo ln -s /opt/yarn/yarn-v1.3.2/bin/yarn /usr/local/bin/yarn && \
     echo `yarn version`
 # I use the specific-version link that https://yarnpkg.com/latest.tar.gz points to, because I don't want the yarn version to be indeterminate
