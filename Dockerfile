@@ -37,7 +37,7 @@ RUN cd /usr/local \
 RUN sudo gem install bundler
 
 RUN sudo mkdir /opt/yarn
-RUN sudo wget https://yarnpkg.com/downloads/0.21.3/yarn-v0.21.3.tar.gz -O /tmp/yarn.tar.gz && \
+RUN sudo wget https://github.com/yarnpkg/yarn/releases/download/v1.3.2/yarn-v1.3.2.tar.gz -O /tmp/yarn.tar.gz && \
     sudo tar zvxf /tmp/yarn.tar.gz -C /opt/yarn && \
     sudo ln -s /opt/yarn/dist/bin/yarn /usr/local/bin/yarn && \
     echo `yarn version`
