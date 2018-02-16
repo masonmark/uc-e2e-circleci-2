@@ -25,15 +25,6 @@ RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng \
 RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
-RUN cd /usr/local \
-    && sudo wget https://storage.googleapis.com/golang/go1.8.linux-amd64.tar.gz \
-    && sudo tar xf go1.8*.tar.gz \
-    && sudo ln -s /usr/local/go/bin/* /usr/bin/ \
-    && sudo chmod -R 755 /usr/local \
-    && sudo mkdir -p $GOPATH \
-    && sudo chmod -R 777 $GOPATH \
-    && go get -v github.com/soracom/soracom-sdk-go
-
 RUN sudo gem install bundler
 
 RUN sudo mkdir /opt/yarn
