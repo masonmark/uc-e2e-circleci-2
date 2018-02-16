@@ -2,7 +2,7 @@
 #
 # 2017-04-24: initial version
 
-FROM selenium/standalone-chrome:3.7.1
+FROM selenium/standalone-chrome:3.9.1
 
 ENV GOPATH /go
 
