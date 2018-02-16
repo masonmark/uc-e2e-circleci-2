@@ -11,16 +11,15 @@ ENV DISPLAY :99
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/bundle/bin:/tmp/user-console/node_modules/.bin:/firefox
 
-RUN sudo apt-get -yqq update && sudo apt-get install -y \
-    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim
+RUN sudo add-apt-repository ppa:mozillateam/firefox-stable
+RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng
+RUN sudo apt-get -y update
+RUN sudo apt-get upgrade
 
-RUN sudo apt-get -y install firefox
+RUN sudo apt-get install -y \
+    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim firefox ruby2.4 ruby2.4-dev build-essential ruby-switch
 
-RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng \
-    && sudo apt-get -y update \
-    && sudo apt-get -y install ruby2.4 ruby2.4-dev build-essential \
-    && sudo apt-get -y install ruby-switch \
-    && sudo ruby-switch --set ruby2.4
+RUN sudo ruby-switch --set ruby2.4
 
 RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
