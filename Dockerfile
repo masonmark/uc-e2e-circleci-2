@@ -11,13 +11,18 @@ ENV DISPLAY :99
 
 ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/go/bin:/usr/local/bundle/bin:/tmp/user-console/node_modules/.bin:/firefox
 
-RUN sudo add-apt-repository ppa:mozillateam/firefox-stable
-RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng
 RUN sudo apt-get -y update
-RUN sudo apt-get upgrade
-
+RUN sudo apt-get -y upgrade
 RUN sudo apt-get install -y \
-    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim firefox ruby2.4 ruby2.4-dev build-essential ruby-switch
+    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim
+
+# RUN sudo apt-add-repository ppa:mozillateam/firefox-next
+RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng
+
+RUN sudo apt-get -y update
+RUN sudo apt-get -y upgrade
+
+RUN sudo apt-get install -y firefox ruby2.4 ruby2.4-dev build-essential ruby-switch
 
 RUN sudo ruby-switch --set ruby2.4
 
