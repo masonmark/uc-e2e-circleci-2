@@ -15,19 +15,13 @@ RUN sudo apt-get -y upgrade
 RUN sudo apt-get install -y \
     git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim
 
-RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng
-
 RUN sudo apt-get -y update
 RUN sudo apt-get -y upgrade
 
-RUN sudo apt-get install -y firefox ruby2.4 ruby2.4-dev build-essential ruby-switch
-
-RUN sudo ruby-switch --set ruby2.4
+RUN sudo apt-get install -y firefox build-essential
 
 RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
-
-RUN sudo gem install bundler
 
 RUN sudo mkdir /opt/yarn
 RUN sudo wget https://github.com/yarnpkg/yarn/releases/download/v1.3.2/yarn-v1.3.2.tar.gz -O /tmp/yarn.tar.gz && \
