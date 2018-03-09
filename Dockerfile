@@ -15,7 +15,6 @@ RUN sudo apt-get -y upgrade
 RUN sudo apt-get install -y \
     git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim
 
-# RUN sudo apt-add-repository ppa:mozillateam/firefox-next
 RUN sudo apt-add-repository -y ppa:brightbox/ruby-ng
 
 RUN sudo apt-get -y update
