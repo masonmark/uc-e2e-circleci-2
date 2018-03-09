@@ -4,7 +4,6 @@
 
 FROM selenium/standalone-chrome:3.9.1
 
-ENV GOPATH /go
 
 ENV DISPLAY :99
   # then on CI use e.g.: Xvfb :99 -screen 0 1280x1024x24
