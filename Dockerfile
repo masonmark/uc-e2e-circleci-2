@@ -2,7 +2,7 @@
 #
 # 2017-04-24: initial version
 
-FROM selenium/standalone-chrome:3.10.0
+FROM selenium/standalone-chrome:3.11.0
 
 ENV DISPLAY :99
   # then on CI use e.g.: Xvfb :99 -screen 0 1280x1024x24
