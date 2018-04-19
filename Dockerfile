@@ -23,8 +23,8 @@ RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 RUN sudo mkdir /opt/yarn
-RUN sudo wget https://github.com/yarnpkg/yarn/releases/download/v1.3.2/yarn-v1.3.2.tar.gz -O /tmp/yarn.tar.gz && \
+RUN sudo wget https://github.com/yarnpkg/yarn/releases/download/v1.6.0/yarn-v1.6.0.tar.gz -O /tmp/yarn.tar.gz && \
     sudo tar zvxf /tmp/yarn.tar.gz -C /opt/yarn && \
-    sudo ln -s /opt/yarn/yarn-v1.3.2/bin/yarn /usr/local/bin/yarn && \
+    sudo ln -s /opt/yarn/yarn-v1.6.0/bin/yarn /usr/local/bin/yarn && \
     echo `yarn version`
 # I use the specific-version link that https://yarnpkg.com/latest.tar.gz points to, because I don't want the yarn version to be indeterminate
