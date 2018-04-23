@@ -18,6 +18,13 @@ RUN sudo apt-get -y update
 RUN sudo apt-get -y upgrade
 
 RUN sudo apt-get install -y firefox build-essential
+RUN sudo apt-get -y purge firefox
+# install then purge to keep the pre-requisites?
+
+RUN sudo wget http://ftp.mozilla.org/pub/firefox/releases/58.0.2/linux-x86_64/en-US/firefox-58.0.2.tar.bz2
+RUN sudo tar xjf firefox-58.0.2.tar.bz2
+RUN sudo mv /firefox /usr/lib/firefox
+RUN sudo ln -s /usr/lib/firefox/firefox /usr/bin/firefox
 
 RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
