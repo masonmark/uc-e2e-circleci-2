@@ -26,7 +26,7 @@ RUN sudo tar xjf firefox-58.0.2.tar.bz2
 RUN sudo mv /firefox /usr/lib/firefox
 RUN sudo ln -s /usr/lib/firefox/firefox /usr/bin/firefox
 
-RUN sudo curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+RUN sudo curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 RUN sudo apt-get install -y nodejs
 
 RUN sudo mkdir /opt/yarn
