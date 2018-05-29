@@ -1,8 +1,9 @@
 # masonmark/uc-e2e-circleci-2: A project-specific base image for testing using CircleCI's 2.x platform.
 #
 # 2017-04-24: initial version
+# 2018-05-29: updated with Cypress dependencies (copied from cypress/base)
 
-FROM selenium/standalone-chrome:3.11.0
+FROM selenium/standalone-chrome:3.12.0
 
 ENV DISPLAY :99
   # then on CI use e.g.: Xvfb :99 -screen 0 1280x1024x24
@@ -12,7 +13,7 @@ ENV PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local
 RUN sudo apt-get -y update
 RUN sudo apt-get -y upgrade
 RUN sudo apt-get install -y \
-    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim
+    git software-properties-common wget curl sudo xvfb bzip2 apt-utils vim libgtk2.0-0 libnotify-dev libgconf-2-4 libnss3 libxss1 libasound2
 
 RUN sudo apt-get -y update
 RUN sudo apt-get -y upgrade
